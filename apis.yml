@@ -1,0 +1,32 @@
+aid: microsoft-azure-postgresql
+url: https://raw.githubusercontent.com/api-evangelist/microsoft-azure-postgresql/refs/heads/main/apis.yml
+apis:
+  - aid: microsoft-azure-postgresql:rest-api
+    name: Azure Database for PostgreSQL REST API
+    tags:
+      - Database
+      - PostgreSQL
+      - Managed Database
+      - Open Source
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://management.azure.com/
+    humanURL: https://learn.microsoft.com/en-us/rest/api/postgresql/
+    properties:
+      - url: https://learn.microsoft.com/en-us/rest/api/postgresql/
+        type: Documentation
+    description: >-
+      Azure Database for PostgreSQL REST API provides management of fully managed PostgreSQL database servers including Flexible Server and Cosmos DB for PostgreSQL. It supports server provisioning, scaling, backup configuration, and high availability setup.
+common:
+  - type: Portal
+    url: https://portal.azure.com/
+  - type: Pricing
+    url: https://azure.microsoft.com/en-us/pricing/
+  - type: Terms of Service
+    url: https://www.microsoft.com/en-us/legal/terms-of-use
+  - type: Privacy Policy
+    url: https://privacy.microsoft.com/en-us/privacystatement
+  - type: Support
+    url: https://support.microsoft.com/
+maintainers:
+  - name: Kin Lane
+    email: kin@apievangelist.com
