@@ -1,0 +1,312 @@
+openapi: 3.1.0
+info:
+  title: Azure Database for PostgreSQL REST API
+  description: Azure Database for PostgreSQL is a fully managed PostgreSQL database service. The REST
+    API manages flexible servers, databases, firewall rules, configurations, replicas, and backups.
+  version: '2024-01-01'
+externalDocs:
+  description: Azure Database for PostgreSQL REST API Documentation
+  url: https://learn.microsoft.com/en-us/rest/api/postgresql/
+servers:
+- url: https://management.azure.com
+  description: Azure Resource Manager
+tags:
+- name: Servers
+  description: Servers operations
+- name: Databases
+  description: Databases operations
+- name: Firewall Rules
+  description: Firewall Rules operations
+- name: Configurations
+  description: Configurations operations
+- name: Replicas
+  description: Replicas operations
+- name: Operations
+  description: Operations operations
+security:
+- azure_auth:
+  - user_impersonation
+paths:
+  /providers/Microsoft.DBforPostgreSQL/operations:
+    get:
+      operationId: listOperations
+      summary: Azure Database for PostgreSQL REST API List operations
+      description: Lists all available REST API operations for Microsoft.DBforPostgreSQL.
+      tags:
+      - Operations
+      parameters:
+      - $ref: '#/components/parameters/apiVersion'
+      responses:
+        '200':
+          description: Operations list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OperationList'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /subscriptions/{subscriptionId}/providers/Microsoft.DBforPostgreSQL/flexibleServers:
+    get:
+      operationId: listFlexibleserversBySubscription
+      summary: Azure Database for PostgreSQL REST API List by subscription
+      description: Lists all flexibleServers resources within the specified subscription.
+      tags:
+      - Servers
+      parameters:
+      - $ref: '#/components/parameters/subscriptionId'
+      - $ref: '#/components/parameters/apiVersion'
+      responses:
+        '200':
+          description: Resource list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceList'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/flexibleServers:
+    get:
+      operationId: listFlexibleserversByResourceGroup
+      summary: Azure Database for PostgreSQL REST API List by resource group
+      description: Lists all flexibleServers resources within the specified resource group.
+      tags:
+      - Servers
+      parameters:
+      - $ref: '#/components/parameters/subscriptionId'
+      - $ref: '#/components/parameters/resourceGroupName'
+      - $ref: '#/components/parameters/apiVersion'
+      responses:
+        '200':
+          description: Resource list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceList'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/flexibleServers/{name}
+  : parameters:
+    - $ref: '#/components/parameters/subscriptionId'
+    - $ref: '#/components/parameters/resourceGroupName'
+    - name: name
+      in: path
+      required: true
+      description: Name of the resource.
+      schema:
+        type: string
+    - $ref: '#/components/parameters/apiVersion'
+    get:
+      operationId: getFlexibleservers
+      summary: Azure Database for PostgreSQL REST API Get resource
+      description: Gets a specific flexibleServers resource.
+      tags:
+      - Servers
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Resource'
+        '404':
+          description: Not found
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      operationId: createOrUpdateFlexibleservers
+      summary: Azure Database for PostgreSQL REST API Create or update resource
+      description: Creates or updates a flexibleServers resource.
+      tags:
+      - Servers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Resource'
+      responses:
+        '200':
+          description: Resource updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Resource'
+        '201':
+          description: Resource created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Resource'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    patch:
+      operationId: updateFlexibleservers
+      summary: Azure Database for PostgreSQL REST API Update resource
+      description: Updates a flexibleServers resource.
+      tags:
+      - Servers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        '200':
+          description: Resource updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Resource'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      operationId: deleteFlexibleservers
+      summary: Azure Database for PostgreSQL REST API Delete resource
+      description: Deletes a flexibleServers resource.
+      tags:
+      - Servers
+      responses:
+        '200':
+          description: Resource deleted
+        '202':
+          description: Deletion accepted
+        '204':
+          description: Resource not found or already deleted
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  parameters:
+    subscriptionId:
+      name: subscriptionId
+      in: path
+      required: true
+      description: The ID of the target subscription.
+      schema:
+        type: string
+    resourceGroupName:
+      name: resourceGroupName
+      in: path
+      required: true
+      description: The name of the resource group.
+      schema:
+        type: string
+    apiVersion:
+      name: api-version
+      in: query
+      required: true
+      description: The API version to use for this operation.
+      schema:
+        type: string
+  schemas:
+    Resource:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Resource ID.
+        name:
+          type: string
+          description: Resource name.
+        type:
+          type: string
+          description: Resource type.
+        location:
+          type: string
+          description: Resource location.
+        tags:
+          type: object
+          additionalProperties:
+            type: string
+        properties:
+          type: object
+          description: Resource-specific properties.
+    ResourceList:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Resource'
+        nextLink:
+          type: string
+          description: URL to the next page of results.
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+            target:
+              type: string
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        display:
+          type: object
+          properties:
+            provider:
+              type: string
+            resource:
+              type: string
+            operation:
+              type: string
+            description:
+              type: string
+        isDataAction:
+          type: boolean
+    OperationList:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+        nextLink:
+          type: string
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      description: Azure Active Directory OAuth2 Flow.
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: Impersonate your user account
+x-generated-from: https://learn.microsoft.com/en-us/rest/api/postgresql/
+x-generated-by: claude-crawl-2026-05-08

@@ -26,6 +26,8 @@ apis:
       - Open Source
       - PostgreSQL
     properties:
+      - url: openapi/microsoft-azure-postgresql-openapi.yml
+        type: OpenAPI
       - type: Documentation
         url: https://learn.microsoft.com/en-us/rest/api/postgresql/
       - type: Authentication
