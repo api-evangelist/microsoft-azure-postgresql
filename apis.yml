@@ -43,15 +43,15 @@ common:
     url: https://learn.microsoft.com/en-us/azure/postgresql/
   - type: Website
     url: https://azure.microsoft.com/en-us/products/postgresql
-  - type: Sign Up
+  - type: SignUp
     url: https://azure.microsoft.com/en-us/free/
   - type: Login
     url: https://portal.azure.com/
   - type: Support
     url: https://support.microsoft.com/
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://www.microsoft.com/en-us/legal/terms-of-use
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://privacy.microsoft.com/en-us/privacystatement
 maintainers:
   - FN: Kin Lane
