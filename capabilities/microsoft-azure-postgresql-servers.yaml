@@ -1,0 +1,229 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Azure Database for PostgreSQL REST API — Servers
+  description: 'Azure Database for PostgreSQL REST API — Servers. 6 operations. Lead operation: Azure Database for PostgreSQL
+    REST API List by subscription. Self-contained Naftiko capability covering one Microsoft Azure Postgresql business surface.'
+  tags:
+  - Microsoft Azure Postgresql
+  - Servers
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_AZURE_POSTGRESQL_API_KEY: MICROSOFT_AZURE_POSTGRESQL_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: microsoft-azure-postgresql-servers
+    baseUri: https://management.azure.com
+    description: Azure Database for PostgreSQL REST API — Servers business capability. Self-contained, no shared references.
+    resources:
+    - name: subscriptions-subscriptionId-providers-Microsoft.DBforPostgreSQL-flexibleServers
+      path: /subscriptions/{subscriptionId}/providers/Microsoft.DBforPostgreSQL/flexibleServers
+      operations:
+      - name: listflexibleserversbysubscription
+        method: GET
+        description: Azure Database for PostgreSQL REST API List by subscription
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/flexibleServers
+      operations:
+      - name: listflexibleserversbyresourcegroup
+        method: GET
+        description: Azure Database for PostgreSQL REST API List by resource group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/flexibleServers/{name}
+      operations:
+      - name: getflexibleservers
+        method: GET
+        description: Azure Database for PostgreSQL REST API Get resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createorupdateflexibleservers
+        method: PUT
+        description: Azure Database for PostgreSQL REST API Create or update resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: updateflexibleservers
+        method: PATCH
+        description: Azure Database for PostgreSQL REST API Update resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deleteflexibleservers
+        method: DELETE
+        description: Azure Database for PostgreSQL REST API Delete resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_AZURE_POSTGRESQL_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: microsoft-azure-postgresql-servers-rest
+    port: 8080
+    description: REST adapter for Azure Database for PostgreSQL REST API — Servers. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/subscriptions/{subscriptionid}/providers/microsoft-dbforpostgresql/flexibleservers
+      name: subscriptions-subscriptionid-providers-microsoft-dbforpostgresql-flexibleservers
+      description: REST surface for subscriptions-subscriptionId-providers-Microsoft.DBforPostgreSQL-flexibleServers.
+      operations:
+      - method: GET
+        name: listflexibleserversbysubscription
+        description: Azure Database for PostgreSQL REST API List by subscription
+        call: microsoft-azure-postgresql-servers.listflexibleserversbysubscription
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-dbforpostgresql/flexibleservers
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: listflexibleserversbyresourcegroup
+        description: Azure Database for PostgreSQL REST API List by resource group
+        call: microsoft-azure-postgresql-servers.listflexibleserversbyresourcegroup
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-dbforpostgresql/flexibleservers/{name}
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: getflexibleservers
+        description: Azure Database for PostgreSQL REST API Get resource
+        call: microsoft-azure-postgresql-servers.getflexibleservers
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: createorupdateflexibleservers
+        description: Azure Database for PostgreSQL REST API Create or update resource
+        call: microsoft-azure-postgresql-servers.createorupdateflexibleservers
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updateflexibleservers
+        description: Azure Database for PostgreSQL REST API Update resource
+        call: microsoft-azure-postgresql-servers.updateflexibleservers
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deleteflexibleservers
+        description: Azure Database for PostgreSQL REST API Delete resource
+        call: microsoft-azure-postgresql-servers.deleteflexibleservers
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: microsoft-azure-postgresql-servers-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Azure Database for PostgreSQL REST API — Servers. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: azure-database-postgresql-rest-api
+      description: Azure Database for PostgreSQL REST API List by subscription
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-postgresql-servers.listflexibleserversbysubscription
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-database-postgresql-rest-api-2
+      description: Azure Database for PostgreSQL REST API List by resource group
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-postgresql-servers.listflexibleserversbyresourcegroup
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-database-postgresql-rest-api-3
+      description: Azure Database for PostgreSQL REST API Get resource
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-postgresql-servers.getflexibleservers
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-database-postgresql-rest-api-4
+      description: Azure Database for PostgreSQL REST API Create or update resource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-postgresql-servers.createorupdateflexibleservers
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-database-postgresql-rest-api-5
+      description: Azure Database for PostgreSQL REST API Update resource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-postgresql-servers.updateflexibleservers
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-database-postgresql-rest-api-6
+      description: Azure Database for PostgreSQL REST API Delete resource
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: microsoft-azure-postgresql-servers.deleteflexibleservers
+      outputParameters:
+      - type: object
+        mapping: $.
