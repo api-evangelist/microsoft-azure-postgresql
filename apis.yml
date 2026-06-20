@@ -3,7 +3,7 @@ description: >-
   Azure Database for PostgreSQL is a fully managed relational database service based on the open-source PostgreSQL
   engine. It provides Flexible Server and Cosmos DB for PostgreSQL deployment options with built-in high availability,
   automated backups, scaling, and security.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Database
   - Managed Database
@@ -19,7 +19,7 @@ apis:
       Azure Database for PostgreSQL REST API provides management of fully managed PostgreSQL database servers including
       Flexible Server and Cosmos DB for PostgreSQL. It supports server provisioning, scaling, backup configuration, and
       high availability setup.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://learn.microsoft.com/en-us/rest/api/postgresql/
     baseURL: https://management.azure.com/
     tags:
