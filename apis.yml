@@ -34,7 +34,7 @@ apis:
         url: https://learn.microsoft.com/en-us/rest/api/postgresql/
       - type: Authentication
         url: https://learn.microsoft.com/en-us/rest/api/azure/
-      - type: Quickstart
+      - type: GettingStarted
         url: https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/quickstart-create-server-portal
 common:
   - type: GitHubOrganization
@@ -47,7 +47,7 @@ common:
     url: https://learn.microsoft.com/en-us/azure/postgresql/
   - type: Website
     url: https://azure.microsoft.com/en-us/products/postgresql
-  - type: SignUp
+  - type: Signup
     url: https://azure.microsoft.com/en-us/free/
   - type: Login
     url: https://portal.azure.com/
@@ -57,7 +57,7 @@ common:
     url: https://www.microsoft.com/en-us/legal/terms-of-use
   - type: PrivacyPolicy
     url: https://privacy.microsoft.com/en-us/privacystatement
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://portal.azure.com/llms.txt
 maintainers:
   - FN: Kin Lane
