@@ -37,6 +37,10 @@ apis:
       - type: GettingStarted
         url: https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/quickstart-create-server-portal
 common:
+  - type: DomainSecurity
+    url: security/microsoft-azure-postgresql-domain-security.yml
+  - type: Authentication
+    url: authentication/microsoft-azure-postgresql-authentication.yml
   - type: OAuthScopes
     url: scopes/microsoft-azure-postgresql-scopes.yml
   - type: GitHubOrganization
