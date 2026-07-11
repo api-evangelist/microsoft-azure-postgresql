@@ -37,6 +37,8 @@ apis:
       - type: GettingStarted
         url: https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/quickstart-create-server-portal
 common:
+  - type: OAuthScopes
+    url: scopes/microsoft-azure-postgresql-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/Azure
   - type: Portal
