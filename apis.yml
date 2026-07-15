@@ -37,6 +37,8 @@ apis:
       - type: GettingStarted
         url: https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/quickstart-create-server-portal
 common:
+  - type: AgenticAccess
+    url: agentic-access/microsoft-azure-postgresql-agentic-access.yml
   - type: DomainSecurity
     url: security/microsoft-azure-postgresql-domain-security.yml
   - type: Authentication
