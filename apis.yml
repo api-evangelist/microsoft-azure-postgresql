@@ -3,7 +3,20 @@ description: >-
   Azure Database for PostgreSQL is a fully managed relational database service based on the open-source PostgreSQL
   engine. It provides Flexible Server and Cosmos DB for PostgreSQL deployment options with built-in high availability,
   automated backups, scaling, and security.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/microsoft-azure-postgresql.png
 tags:
   - Database
   - Managed Database
@@ -14,28 +27,40 @@ created: '2026-03-13'
 modified: '2026-05-19'
 specificationVersion: '0.18'
 apis:
-  - name: Azure Database for PostgreSQL REST API
-    description: >-
-      Azure Database for PostgreSQL REST API provides management of fully managed PostgreSQL database servers including
-      Flexible Server and Cosmos DB for PostgreSQL. It supports server provisioning, scaling, backup configuration, and
-      high availability setup.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://learn.microsoft.com/en-us/rest/api/postgresql/
-    baseURL: https://management.azure.com/
-    tags:
-      - Database
-      - Managed Database
-      - Open Source
-      - PostgreSQL
-    properties:
-      - url: openapi/microsoft-azure-postgresql-openapi.yml
-        type: OpenAPI
-      - type: Documentation
-        url: https://learn.microsoft.com/en-us/rest/api/postgresql/
-      - type: Authentication
-        url: https://learn.microsoft.com/en-us/rest/api/azure/
-      - type: GettingStarted
-        url: https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/quickstart-create-server-portal
+- aid: microsoft-azure-postgresql:microsoft-azure-postgresql-operations-api
+  name: Azure Database for PostgreSQL Operations API
+  description: Operations operations
+  humanURL: https://learn.microsoft.com/en-us/rest/api/postgresql/
+  baseURL: https://management.azure.com/
+  tags:
+  - Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-azure-postgresql-operations-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/postgresql/
+  - type: Authentication
+    url: https://learn.microsoft.com/en-us/rest/api/azure/
+  - type: GettingStarted
+    url: >-
+      https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/quickstart-create-server-portal
+- aid: microsoft-azure-postgresql:microsoft-azure-postgresql-servers-api
+  name: Azure Database for PostgreSQL Servers API
+  description: Servers operations
+  humanURL: https://learn.microsoft.com/en-us/rest/api/postgresql/
+  baseURL: https://management.azure.com/
+  tags:
+  - Servers
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-azure-postgresql-servers-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/postgresql/
+  - type: Authentication
+    url: https://learn.microsoft.com/en-us/rest/api/azure/
+  - type: GettingStarted
+    url: >-
+      https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/quickstart-create-server-portal
 common:
   - type: AgenticAccess
     url: agentic-access/microsoft-azure-postgresql-agentic-access.yml
