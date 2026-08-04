@@ -1,0 +1,16 @@
+{
+  "provider": "microsoft-azure-postgresql",
+  "sources": [
+    "microsoft-azure-postgresql-operations-api-openapi.yml",
+    "microsoft-azure-postgresql-servers-api-openapi.yml"
+  ],
+  "outputs": [
+    "microsoft-azure-postgresql-operations-api-openapi.yml",
+    "microsoft-azure-postgresql-servers-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
