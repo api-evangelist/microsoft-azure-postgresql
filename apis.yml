@@ -20,6 +20,12 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/microsoft-
 tags:
   - Database
   - Managed Database
+  - Open-Source
+  - PostgreSQL
+  - Relational
+tags_raw:
+  - Database
+  - Managed Database
   - Open Source
   - PostgreSQL
   - Relational
@@ -32,7 +38,8 @@ apis:
   description: Operations operations
   humanURL: https://learn.microsoft.com/en-us/rest/api/postgresql/
   baseURL: https://management.azure.com/
-  tags:
+  tags: []
+  tags_raw:
   - Operations
   properties:
   - type: OpenAPI
