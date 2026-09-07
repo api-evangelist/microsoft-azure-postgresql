@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Azure Database for PostgreSQL REST Operations Servers API
   description: Azure Database for PostgreSQL is a fully managed PostgreSQL database service. The REST API manages flexible servers, databases, firewall rules, configurations, replicas, and backups.
@@ -170,16 +170,6 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
   schemas:
-    ResourceList:
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/Resource'
-        nextLink:
-          type: string
-          description: URL to the next page of results.
     ErrorResponse:
       type: object
       properties:
@@ -214,12 +204,22 @@ components:
         properties:
           type: object
           description: Resource-specific properties.
+    ResourceList:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Resource'
+        nextLink:
+          type: string
+          description: URL to the next page of results.
   parameters:
-    subscriptionId:
-      name: subscriptionId
-      in: path
+    apiVersion:
+      name: api-version
+      in: query
       required: true
-      description: The ID of the target subscription.
+      description: The API version to use for this operation.
       schema:
         type: string
     resourceGroupName:
@@ -229,11 +229,11 @@ components:
       description: The name of the resource group.
       schema:
         type: string
-    apiVersion:
-      name: api-version
-      in: query
+    subscriptionId:
+      name: subscriptionId
+      in: path
       required: true
-      description: The API version to use for this operation.
+      description: The ID of the target subscription.
       schema:
         type: string
   securitySchemes:
