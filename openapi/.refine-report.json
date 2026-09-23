@@ -1,8 +1,7 @@
 {
   "provider": "microsoft-azure-postgresql",
   "sources": [
-    "microsoft-azure-postgresql-operations-api-openapi.yml",
-    "microsoft-azure-postgresql-servers-api-openapi.yml"
+    "_ae-authored/microsoft-azure-postgresql-openapi.yml"
   ],
   "outputs": [
     "microsoft-azure-postgresql-operations-api-openapi.yml",
@@ -12,9 +11,12 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "microsoft-azure-postgresql-operations-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "microsoft-azure-postgresql-servers-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "microsoft-azure-postgresql-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "microsoft-azure-postgresql-operations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "microsoft-azure-postgresql-servers-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
