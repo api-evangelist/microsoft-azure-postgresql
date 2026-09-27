@@ -33,7 +33,7 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/microsoft-
 tags:
   - Database
   - Managed Database
-  - Open-Source
+  - Open Source
   - PostgreSQL
   - Relational
 tags_raw:
@@ -42,6 +42,7 @@ tags_raw:
   - Open Source
   - PostgreSQL
   - Relational
+  - Open-Source
 created: '2026-03-13'
 modified: '2026-05-19'
 specificationVersion: '0.23'
