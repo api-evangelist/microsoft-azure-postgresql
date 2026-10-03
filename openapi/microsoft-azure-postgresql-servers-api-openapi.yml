@@ -170,16 +170,6 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
   schemas:
-    ResourceList:
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/Resource'
-        nextLink:
-          type: string
-          description: URL to the next page of results.
     Resource:
       type: object
       properties:
@@ -214,6 +204,16 @@ components:
               type: string
             target:
               type: string
+    ResourceList:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Resource'
+        nextLink:
+          type: string
+          description: URL to the next page of results.
   parameters:
     apiVersion:
       name: api-version
