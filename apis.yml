@@ -83,6 +83,9 @@ apis:
     url: >-
       https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/quickstart-create-server-portal
 common:
+  - type: CapabilityMap
+    url: capabilities/microsoft-azure-postgresql-capability-edges.yml
+    name: Azure Database for PostgreSQL Business Capability Map
   - type: AgenticAccess
     url: agentic-access/microsoft-azure-postgresql-agentic-access.yml
   - type: DomainSecurity
