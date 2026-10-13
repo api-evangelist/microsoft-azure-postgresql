@@ -1,0 +1,18 @@
+edges:
+- partner_name: PostgreSQL
+  partner: postgresql
+  partner_match: shape-anchor
+  channel: provider-built
+  relationship: compatible
+  direction: provider-built
+  shape: postgres-wire
+  type: contract
+  degree: full
+  evidence: https://github.com/api-evangelist/microsoft-azure-postgresql/blob/main/openapi/microsoft-azure-postgresql-operations-api-openapi.yml#L4
+  evidence_kind: own-contract
+  quote: 'description: Azure Database for PostgreSQL is a fully managed PostgreSQL database service. The REST API
+    manages flexible servers, databases, firewall rules, configurations, replicas, and backups.'
+  detected_by: sweep-shape-compat.py
+  first_seen: '2026-10-13'
+generated: '2026-10-13'
+method: searched

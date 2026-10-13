@@ -1,0 +1,12 @@
+fetched: '2026-10-13'
+method: fetched
+source: https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/overview
+page: https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/overview
+file: microsoft-azure-postgresql-postgres-wire-1.md
+bytes: 15001
+sha256: b5bdb229135514d796050829764e851341f127715287622374e87e88fd556a64
+anchor: postgresql
+shape: postgres-wire
+classification: no-compatibility-statement
+quote: null
+note: text extracted from the provider's own page (tags stripped), saved for evidence
