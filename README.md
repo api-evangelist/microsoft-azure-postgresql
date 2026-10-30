@@ -1,4 +1,4 @@
-# Azure Database for PostgreSQL (microsoft-azure-postgresql)
+# Azure Database for PostgreSQL
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,59 +66,129 @@
 
 Azure Database for PostgreSQL is a fully managed relational database service based on the open-source PostgreSQL engine. It provides Flexible Server and Cosmos DB for PostgreSQL deployment options with built-in high availability, automated backups, scaling, and security.
 
-## Tags
+**Areas:** Database · Managed Database · Open Source · PostgreSQL · Relational
 
-- Database
-- Managed Database
-- Open Source
-- PostgreSQL
-- Relational
+## Azure Database for PostgreSQL on APIs.io
 
-## Timestamps
+Everything profiled for Azure Database for PostgreSQL is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/microsoft-azure-postgresql/](https://apis.io/providers/microsoft-azure-postgresql/)** — or go straight to one of the APIs or properties below.
 
-- **Created:** 2026-03-13
-- **Modified:** 2026-05-19
+### APIs (2)
 
-## APIs
+- [Azure Database for PostgreSQL Operations API](https://apis.io/apis/microsoft-azure-postgresql/microsoft-azure-postgresql-operations-api/) — Operations operations
+- [Azure Database for PostgreSQL Servers API](https://apis.io/apis/microsoft-azure-postgresql/microsoft-azure-postgresql-servers-api/) — Servers operations
 
-### Azure Database for PostgreSQL REST API
+### Published properties
 
-Azure Database for PostgreSQL REST API provides management of fully managed PostgreSQL database servers including Flexible Server and Cosmos DB for PostgreSQL. It supports server provisioning, scaling, backup configuration, and high availability setup.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- **Human URL:** [https://learn.microsoft.com/en-us/rest/api/postgresql/](https://learn.microsoft.com/en-us/rest/api/postgresql/)
-- **Base URL:** `https://management.azure.com/`
+#### Agentic access (1)
 
-#### Tags
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- Database
-- Managed Database
-- Open Source
-- PostgreSQL
+- [Microsoft Azure Postgresql Agentic Access](https://apis.io/agentic-access/microsoft-azure-postgresql/microsoft-azure-postgresql-agentic-access/)
 
-#### Properties
+#### Collections (3)
 
-- [OpenAPI](openapi/microsoft-azure-postgresql-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/microsoft-azure-postgresql.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-azure-postgresql.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Documentation](https://learn.microsoft.com/en-us/rest/api/postgresql/)
-- [Authentication](https://learn.microsoft.com/en-us/rest/api/azure/)
-- [Quickstart](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/quickstart-create-server-portal)
+Postman and Open Collection request collections.
 
-## Common Properties
+- [Azure Database for PostgreSQL REST API](https://apis.io/collections/microsoft-azure-postgresql/open-microsoft-azure-postgresql/)
+- [Azure Database for PostgreSQL REST Operations API](https://apis.io/collections/microsoft-azure-postgresql/open-microsoft-azure-postgresql-operations-api/)
+- [Azure Database for PostgreSQL REST Operations Servers API](https://apis.io/collections/microsoft-azure-postgresql/open-microsoft-azure-postgresql-servers-api/)
 
-- [GitHub Organization](https://github.com/Azure)
-- [Portal](https://portal.azure.com/)
-- [Pricing](https://azure.microsoft.com/en-us/pricing/details/postgresql/flexible-server/)
-- [Documentation](https://learn.microsoft.com/en-us/azure/postgresql/)
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Microsoft Azure Postgresql Authentication](https://apis.io/security/microsoft-azure-postgresql/microsoft-azure-postgresql-authentication/)
+- [Microsoft Azure Postgresql Domain Security](https://apis.io/security/microsoft-azure-postgresql/microsoft-azure-postgresql-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Microsoft Azure Postgresql Scopes](https://apis.io/scopes/microsoft-azure-postgresql/microsoft-azure-postgresql-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Microsoft Azure Postgresql Plans Pricing](https://apis.io/plans/microsoft-azure-postgresql/microsoft-azure-postgresql-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Microsoft Azure Postgresql Rate Limits](https://apis.io/rate-limits/microsoft-azure-postgresql/microsoft-azure-postgresql-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Microsoft Azure Postgresql Finops](https://apis.io/finops/microsoft-azure-postgresql/microsoft-azure-postgresql-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://azure.microsoft.com/en-us/products/postgresql)
-- [Sign Up](https://azure.microsoft.com/en-us/free/)
-- [Login](https://portal.azure.com/)
+- [Documentation](https://learn.microsoft.com/en-us/azure/postgresql/)
+- [Pricing](https://azure.microsoft.com/en-us/pricing/details/postgresql/flexible-server/)
 - [Support](https://support.microsoft.com/)
-- [Terms of Service](https://www.microsoft.com/en-us/legal/terms-of-use)
-- [Privacy Policy](https://privacy.microsoft.com/en-us/privacystatement)
-- [L L Ms Txt](https://portal.azure.com/llms.txt)
+- [Terms of service](https://www.microsoft.com/en-us/legal/terms-of-use)
+- [Privacy policy](https://privacy.microsoft.com/en-us/privacystatement)
+- [GitHub](https://github.com/Azure)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 44.1** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 80.4 |
+| Contract quality | 44.1 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 47.6 |
+| Access clarity | 52.6 |
+
+**Agent readiness 19.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 29.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/microsoft-azure-postgresql/](https://apis.io/providers/microsoft-azure-postgresql/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Azure Database for PostgreSQL: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/microsoft-azure-postgresql/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
